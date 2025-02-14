@@ -2,6 +2,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const chatForm = document.getElementById('chat-form');
     const chatInput = document.getElementById('chat-input');
     const chatContainer = document.getElementById('chat-container');
+    const muteToggle = document.getElementById('mute-toggle');
+    const ambientAudio = document.getElementById('ambient-audio');
+
+    // Ensure the audio volume is not 0 (default is 1, but just in case)
+    ambientAudio.volume = 0.7;
+
+    // Initially, the audio is muted (as set in the HTML)
+    // Clicking the toggle button will switch between muted and unmuted.
+    muteToggle.addEventListener('click', () => {
+        if (ambientAudio.muted) {
+            ambientAudio.muted = false;
+            // Explicitly start playing the audio
+            ambientAudio.play().catch(error => {
+                console.error("Audio play failed:", error);
+            });
+            muteToggle.textContent = "🔊";
+            muteToggle.title = "Mute Audio";
+        } else {
+            ambientAudio.muted = true;
+            muteToggle.textContent = "🔇";
+            muteToggle.title = "Unmute Audio";
+        }
+    });
 
     // Handle form submission for sending a message
     chatForm.addEventListener('submit', async (event) => {
@@ -45,30 +68,4 @@ document.addEventListener('DOMContentLoaded', function () {
         // Scroll to the bottom of the chat container
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const muteToggle = document.getElementById('mute-toggle');
-    const ambientAudio = document.getElementById('ambient-audio');
-
-    // Ensure the audio volume is not 0 (default is 1, but just in case)
-    ambientAudio.volume = 1.0;
-
-    // Initially, the audio is muted (as set in the HTML)
-    // Clicking the toggle button will switch between muted and unmuted.
-    muteToggle.addEventListener('click', () => {
-        if (ambientAudio.muted) {
-            ambientAudio.muted = false;
-            // Explicitly start playing the audio
-            ambientAudio.play().catch(error => {
-                console.error("Audio play failed:", error);
-            });
-            muteToggle.textContent = "🔊";
-            muteToggle.title = "Mute Audio";
-        } else {
-            ambientAudio.muted = true;
-            muteToggle.textContent = "🔇";
-            muteToggle.title = "Unmute Audio";
-        }
-    });
 });
