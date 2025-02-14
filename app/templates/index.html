@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI-RPG</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 </head>
+
 <body>
     <header>
         <h1>AI-RPG: A D&D Game Powered by AI</h1>
@@ -17,16 +20,18 @@
         </div>
 
         <form id="chat-form">
-            <input type="text" id="chat-input" placeholder="Enter your message..." autocomplete="off" required>
+            <input type="text" id="chat-input" placeholder="Enter your message..." autocomplete="off" required />
             <button type="submit">Send</button>
         </form>
     </main>
 
     <footer>
-        <audio src="/static/audio/ambient.mp3" autoplay loop></audio>
+        <audio id="ambient-audio" src="/static/audio/ambient.mp3" autoplay loop muted></audio>
+        <button id="mute-toggle" title="Unmute Audio">🔇</button>
         <p>&copy; 2025 AI-RPG</p>
     </footer>
 
     <script src="/static/js/main.js"></script>
 </body>
+
 </html>

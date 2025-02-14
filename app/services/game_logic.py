@@ -28,11 +28,3 @@ def update_scene(current_scene: str, action: str) -> str:
     # For now, simply concatenate the action to the current scene.
     updated_scene = f"{current_scene}\nPlayer action: {action}"
     return updated_scene
-
-# Example usage (for testing purposes)
-if __name__ == "__main__":
-    print("Dice roll (d20):", roll_dice())
-    
-    initial_scene = "You stand at the entrance of a dark, mysterious cave."
-    action_taken = "You cautiously step inside."
-    print("Updated Scene:\n", update_scene(initial_scene, action_taken))

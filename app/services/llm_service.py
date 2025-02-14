@@ -13,6 +13,8 @@ def generate_dm_response(prompt: str) -> str:
     payload = {"prompt": prompt}
     
     try:
+        return "This is a test response."
+        # Send a POST request to the LLM service with the prompt.
         response = requests.post(api_url, json=payload)
         response.raise_for_status()
         result = response.json()
@@ -20,9 +22,3 @@ def generate_dm_response(prompt: str) -> str:
     except Exception as e:
         print(f"Error calling the LLM service: {e}")
         return "Error generating response from the DM."
-
-# Example usage (for testing purposes)
-if __name__ == "__main__":
-    test_prompt = "You are a mysterious dungeon master. Begin the adventure with an intriguing scenario."
-    dm_reply = generate_dm_response(test_prompt)
-    print("DM Reply:", dm_reply)

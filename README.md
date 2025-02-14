@@ -1,6 +1,6 @@
 # AI-RPG
 
-**AI-RPG** is a proof-of-concept Dungeons & Dragons (D&D) inspired game powered by AI. In this game, players interact with an AI Dungeon Master (DM) via a chat interface. The DM generates narrative responses using a large language model (LLM), while AI-generated images (via Stable Diffusion) and ambient soundtracks create an immersive experience.
+**AI-RPG** is a Dungeons & Dragons (D&D) inspired game powered by AI. In this game, players interact with an AI Dungeon Master (DM) via a chat interface. The DM generates narrative responses using a large language model (LLM), while AI-generated images (via Stable Diffusion) and ambient soundtracks create an immersive experience.
 
 ## Features
 
@@ -14,7 +14,7 @@
 
 ### Prerequisites
 
-- Python 3.9 or higher
+- Python 3.12 or higher
 - [Poetry](https://python-poetry.org/) installed globally
 
 ### 1. Clone the Repository
@@ -26,7 +26,7 @@ cd ai-rpg
 
 ### 2. Install Dependencies with Poetry
 
-Use the Makefile target or run Poetry directly:
+Use the Makefile target:
 
 ```bash
 make install
@@ -73,15 +73,7 @@ make test
 - **Run Application:** `make run`
 - **Run Tests:** `make test`
 - **Clean Up Temporary Files:** `make clean`
-- **Run Linter (if added):** `make lint`
-
-## Future Enhancements
-
-- Integrate a full event-driven architecture with Kafka.
-- Expand game mechanics for richer interactions.
-- Enhance the UI/UX for a more immersive experience.
-- Add additional AI agents to manage game dynamics.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is available under the [MIT License](LICENSE).

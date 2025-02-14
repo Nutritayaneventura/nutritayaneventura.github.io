@@ -21,6 +21,8 @@ def generate_image(prompt: str) -> str:
     }
 
     try:
+        return "https://www.larpinn.co.uk/img/ybc_blog/post/DungeonsnDragonsBanner.jpg"
+        # Send a POST request to the image generation service with the prompt
         response = requests.post(api_url, json=payload)
         response.raise_for_status()
         result = response.json()
@@ -28,9 +30,3 @@ def generate_image(prompt: str) -> str:
     except Exception as e:
         print(f"Error calling the image generation service: {e}")
         return "Error generating image."
-
-# Example usage (for testing purposes)
-if __name__ == "__main__":
-    test_prompt = "A mysterious forest at dusk, with looming shadows and a hint of magic."
-    image_url = generate_image(test_prompt)
-    print("Generated Image URL:", image_url)

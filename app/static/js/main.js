@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const chatForm = document.getElementById('chat-form');
     const chatInput = document.getElementById('chat-input');
     const chatContainer = document.getElementById('chat-container');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Send the message to the backend API
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            
+
             const data = await response.json();
             // Append the DM's response to the chat
             appendMessage('dm', data.message);
@@ -45,4 +45,30 @@ document.addEventListener('DOMContentLoaded', function() {
         // Scroll to the bottom of the chat container
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const muteToggle = document.getElementById('mute-toggle');
+    const ambientAudio = document.getElementById('ambient-audio');
+
+    // Ensure the audio volume is not 0 (default is 1, but just in case)
+    ambientAudio.volume = 1.0;
+
+    // Initially, the audio is muted (as set in the HTML)
+    // Clicking the toggle button will switch between muted and unmuted.
+    muteToggle.addEventListener('click', () => {
+        if (ambientAudio.muted) {
+            ambientAudio.muted = false;
+            // Explicitly start playing the audio
+            ambientAudio.play().catch(error => {
+                console.error("Audio play failed:", error);
+            });
+            muteToggle.textContent = "🔊";
+            muteToggle.title = "Mute Audio";
+        } else {
+            ambientAudio.muted = true;
+            muteToggle.textContent = "🔇";
+            muteToggle.title = "Unmute Audio";
+        }
+    });
 });
