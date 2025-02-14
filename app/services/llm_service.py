@@ -7,7 +7,6 @@ def generate_dm_response(prompt: str) -> str:
     
     This function sends the prompt to the LLM service endpoint and returns the generated response.
     """
-    # Retrieve the LLM API URL from environment variables or default to a local endpoint.
     api_url = os.getenv("LLM_API_URL", "http://localhost:8001/generate")
     
     payload = {"prompt": prompt}

@@ -13,12 +13,11 @@ class Quest(BaseModel):
     description: str
     is_active: bool
 
-class ChatMessage(BaseModel):
-    sender: str  # e.g., "player" or "dm"
+class ChatInput(BaseModel):
     message: str
 
 class GameState(BaseModel):
     player: Player
     active_quests: List[Quest]
-    chat_history: List[ChatMessage]
+    chat_history: List[ChatInput]
     summary: Optional[str] = None
