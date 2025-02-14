@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  ai-rpg:
+    build: .
+    container_name: ai-rpg
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_API_URL=http://localhost:8001/generate
+      - IMAGE_API_URL=http://localhost:8002/generate
+    volumes:
+      - ./:/app
