@@ -1,5 +1,24 @@
 /* Base styles for AI-RPG */
 
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+
+#mute-toggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+#mute-toggle:hover {
+    color: #ccc;
+}
+
 body {
     margin: 0;
     padding: 0;

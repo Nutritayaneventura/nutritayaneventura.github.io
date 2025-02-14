@@ -11,12 +11,15 @@
 
 <body>
     <header>
-        <h1>AI-RPG: A D&D Game Powered by AI</h1>
+        <div class="header-content">
+            <h1>AI-RPG: A D&D Game Powered by AI</h1>
+            <audio id="ambient-audio" src="/static/audio/ambient.mp3" autoplay loop muted></audio>
+            <button id="mute-toggle" title="Unmute Audio">🔇</button>
+        </div>
     </header>
 
     <main>
         <div class="chat-container" id="chat-container">
-            <!-- Chat messages will be appended here -->
         </div>
 
         <form id="chat-form">
@@ -25,13 +28,10 @@
         </form>
 
         <div class="image-container" id="image-container">
-            <!-- Generated image will be inserted here -->
         </div>
     </main>
 
     <footer>
-        <audio id="ambient-audio" src="/static/audio/ambient.mp3" autoplay loop muted></audio>
-        <button id="mute-toggle" title="Unmute Audio">🔇</button>
         <p>&copy; 2025 AI-RPG</p>
     </footer>
 
