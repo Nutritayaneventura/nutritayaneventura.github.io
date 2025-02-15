@@ -11,19 +11,23 @@
 
 <body>
     <header>
+        <img src="/static/images/banner.webp" alt="AI-RPG Banner" class="banner">
         <div class="header-content">
-            <h1>AI-RPG: A D&D Game Powered by AI</h1>
+            <h1>A RPG Game Powered by AI</h1>
             <audio id="ambient-audio" src="/static/audio/ambient.mp3" autoplay loop muted></audio>
             <button id="mute-toggle" title="Unmute Audio">🔇</button>
         </div>
     </header>
 
     <main>
-        <div class="chat-container" id="chat-container">
+        <div class="story-journal">
+            <h2>Story Journal</h2>
+            <div class="chat-container" id="chat-container">
+            </div>
         </div>
 
         <form id="chat-form">
-            <input type="text" id="chat-input" placeholder="Enter your message..." autocomplete="off" required />
+            <input type="text" id="chat-input" placeholder="Enter your action..." autocomplete="off" required />
             <button type="submit">Send</button>
         </form>
 
