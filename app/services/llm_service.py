@@ -12,7 +12,7 @@ def generate_dm_response(prompt: str) -> str:
     payload = {"prompt": prompt}
     
     try:
-        return "This is a test response."*20 + "\n\nEnd of response."
+        return "This is a test response. "*20 + "\n"*20 + "End of response."
         # Send a POST request to the LLM service with the prompt.
         response = requests.post(api_url, json=payload)
         response.raise_for_status()

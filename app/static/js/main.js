@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         messageDiv.classList.add('message', sender);
         messageDiv.textContent = message;
         chatContainer.appendChild(messageDiv);
-        chatContainer.scrollTop = chatContainer.scrollHeight;
+        chatContainer.scrollIntoView({ behavior: 'smooth' });
     }
 
     function appendImage(imageUrl) {
@@ -70,5 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
         img.alt = "Generated Scene";
         img.classList.add("generated-image");
         imageContainer.appendChild(img);
+        imageContainer.scrollIntoView({ behavior: 'smooth' });
     }
 });
