@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from app.api import endpoints
 
-app = FastAPI(title="AI-RPG", description="A RPG game powered by AI", version="0.1.0")
+app = FastAPI(title="AI-RPG", description="AI Powered RPG", version="0.1.0")
 
 # Mount the static directory to serve CSS, JS, audio, etc.
 app.mount("/static", StaticFiles(directory="app/static"), name="static")

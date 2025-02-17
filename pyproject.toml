@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ai-rpg"
 version = "0.1.0"
-description = "A RPG game powered by AI"
+description = "AI Powered RPG"
 authors = ["Your Name <your.email@example.com>"]
 license = "MIT"
 
