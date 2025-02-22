@@ -1,21 +1,17 @@
 import os
 import requests
+from app.services.logger import Logger
 
 API_URL = os.getenv("IMAGE_API_URL")
 API_KEY = os.getenv("IMAGE_API_KEY")
 
+logger = Logger()
+
 
 def generate_image(prompt: str) -> str:
-    """
-    Generate an image based on the given prompt using a hosted Stable Diffusion API.
-
-    Args:
-        prompt (str): A description of the scene to generate.
-
-    Returns:
-        str: URL or path to the generated image.
-    """
     try:
+        logger.log(f"Generating image...")
+        logger.log(f"Prompt: {prompt}")
         return "https://www.larpinn.co.uk/img/ybc_blog/post/DungeonsnDragonsBanner.jpg"
 
         headers = {"Api-Key": API_KEY, "Content-Type": "application/json"}
@@ -35,5 +31,5 @@ def generate_image(prompt: str) -> str:
 
         return response.json()["data"][0]["url"]
     except Exception as e:
-        print(f"Error calling the image generation service: {e}")
+        logger.log(f"Error calling the image generation service: {e}")
         return None

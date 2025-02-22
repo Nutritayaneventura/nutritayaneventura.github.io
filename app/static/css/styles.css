@@ -1,5 +1,4 @@
 /* Base styles for AI-RPG */
-
 header {
     text-align: center;
     background-color: #333;
@@ -55,9 +54,11 @@ footer {
 }
 
 .chat-container {
+    position: relative;
     padding: 2rem;
     background-color: #2a2a2a;
     border-radius: 8px;
+    min-height: 200px;
 }
 
 .message {
@@ -128,4 +129,17 @@ input[type="text"]:focus {
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+#loading-icon {
+    display: none;
+    position: absolute;
+    bottom: 13px;
+    left: 33px;
+    z-index: 1000;
+}
+
+#loading-icon img {
+    width: 25px;
+    height: auto;
 }

@@ -1,53 +1,50 @@
-import os
-import requests
+from langchain_core.messages.human import HumanMessage
+from langchain_core.messages.base import BaseMessage
+from langchain_core.messages.ai import AIMessage
+from app.services.llm import Llm
+from app.services.logger import Logger
 
-API_URL = os.getenv("LLM_API_URL")
-
-
-def generate_dm_response(prompt: str) -> str:
-    """
-    Generate a response from the LLM acting as the Dungeon Master (DM) using a hosted API.
-
-    Args:
-        prompt (str): The player's message to the DM.
-
-    Returns:
-        str: The DM's response to the player's message.
-    """
-    payload = {"prompt": prompt}
-
-    try:
-        return "This is a sample response. " * 20 + "\n" * 20 + "End of response."
-
-        response = requests.post(API_URL, json=payload)
-        response.raise_for_status()
-        result = response.json()
-        return result["response"]
-    except Exception as e:
-        print(f"Error calling the LLM service: {e}")
-        return None
+logger = Logger()
 
 
-def generate_image_prompt(dm_response: str) -> str:
-    """
-    Generate an image prompt based on the DM's response.
+class LlmService:
+    def __init__(self):
+        self.llm = Llm()
+        self.history: list[BaseMessage] = [self.llm.system_message]
 
-    Args:
-        dm_response (str): The DM's response to the player's message.
+    def generate_dm_response(self, prompt: str) -> str:
+        try:
+            logger.log(f"Generating DM response...")
+            return "The adventurers are traveling through the desert, riding on camels. The sun is setting, casting long shadows across the dunes. The caravan is led by a group of adventurers, each with their own unique appearance and equipment. The adventurers are on a quest to find a lost city hidden in the sands, rumored to be filled with treasure and ancient artifacts. As they journey through the desert, they encounter a series of challenges and obstacles, testing their skills and resolve. The adventurers must work together to overcome these challenges and reach their destination before it's too late."
 
-    Returns:
-        str: A description of the scene to generate an image.
-    """
-    prompt = dm_response
-    payload = {"prompt": prompt}
+            self.history.append(HumanMessage(prompt))
+            ai_response = self._invoke_llm()
+            return ai_response.content
+        except Exception as e:
+            logger.log(f"Error generating DM response: {e}")
+            return "There was an error generating the response"
 
-    try:
-        return "A dark forest with ancient ruins and a dragon in the distance."
+    def _invoke_llm(self) -> AIMessage:
+        ai_response = self.llm.invoke(self.history)
+        self.history.append(ai_response)
+        return ai_response
 
-        response = requests.post(API_URL, json=payload)
-        response.raise_for_status()
-        result = response.json()
-        return result["response"]
-    except Exception as e:
-        print(f"Error generating image prompt: {e}")
-        return None
+    def generate_image_prompt(self, dm_response: str) -> str:
+        try:
+            logger.log(f"Generating image prompt...")
+            return (
+                "Desert landscape with a caravan of camels and a group of adventurers"
+            )
+
+            prompt = (
+                "Create a detailed image description in the style 'cinematic anime' for the following scene of a D&D game:\n"
+                "<Scene Description Start>\n"
+                f"{dm_response}\n"
+                "<Scene Description End>\n"
+                "\nOutput only the image description. Use around 200 words."
+            )
+            ai_response = self.llm.invoke([HumanMessage(prompt)])
+            return ai_response.content
+        except Exception as e:
+            logger.log(f"Error generating image prompt: {e}")
+            return None

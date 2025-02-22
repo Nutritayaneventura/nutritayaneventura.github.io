@@ -18,27 +18,25 @@
             <button id="mute-toggle" title="Unmute Audio">🔇</button>
         </div>
     </header>
-
     <main>
         <div class="story-journal">
             <h2>Story Journal</h2>
             <div class="chat-container" id="chat-container">
+                <div id="loading-icon" style="display: none;">
+                    <img src="/static/images/loading.gif" alt="Loading..." />
+                </div>
             </div>
         </div>
-
         <form id="chat-form">
             <input type="text" id="chat-input" placeholder="Enter your action..." autocomplete="off" required />
             <button type="submit">Send</button>
         </form>
-
         <div class="image-container" id="image-container">
         </div>
     </main>
-
     <footer>
         <p>&copy; 2025 AI-RPG</p>
     </footer>
-
     <script src="/static/js/main.js"></script>
 </body>
 

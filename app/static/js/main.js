@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const imageContainer = document.getElementById('image-container');
     const muteToggle = document.getElementById('mute-toggle');
     const ambientAudio = document.getElementById('ambient-audio');
+    const loadingIcon = document.getElementById('loading-icon');
     ambientAudio.volume = 0.7;
 
     muteToggle.addEventListener('click', () => {
@@ -26,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const message = chatInput.value.trim();
         if (!message) return;
-
         appendMessage('player', message);
         chatInput.value = '';
+        loadingIcon.style.display = 'block';
 
         try {
             const response = await fetch('/chat', {
@@ -38,20 +39,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 body: JSON.stringify({ message: message })
             });
-
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-
             const data = await response.json();
             appendMessage('dm', data.message);
-
             if (data.image_url) {
                 appendImage(data.image_url);
             }
         } catch (error) {
             console.error('Error:', error);
             appendMessage('dm', 'There was an error processing your request.');
+        } finally {
+            loadingIcon.style.display = 'none';
         }
     });
 
