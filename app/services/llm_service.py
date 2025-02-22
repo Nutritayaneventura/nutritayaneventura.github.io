@@ -1,23 +1,53 @@
 import os
 import requests
 
+API_URL = os.getenv("LLM_API_URL")
+
+
 def generate_dm_response(prompt: str) -> str:
     """
     Generate a response from the LLM acting as the Dungeon Master (DM) using a hosted API.
-    
-    This function sends the prompt to the LLM service endpoint and returns the generated response.
+
+    Args:
+        prompt (str): The player's message to the DM.
+
+    Returns:
+        str: The DM's response to the player's message.
     """
-    api_url = os.getenv("LLM_API_URL", "http://localhost:8001/generate")
-    
     payload = {"prompt": prompt}
-    
+
     try:
-        return "This is a test response. "*20 + "\n"*20 + "End of response."
-        # Send a POST request to the LLM service with the prompt.
-        response = requests.post(api_url, json=payload)
+        return "This is a sample response. " * 20 + "\n" * 20 + "End of response."
+
+        response = requests.post(API_URL, json=payload)
         response.raise_for_status()
         result = response.json()
-        return result.get("response", "No response provided by the LLM.")
+        return result["response"]
     except Exception as e:
         print(f"Error calling the LLM service: {e}")
-        return "Error generating response from the DM."
+        return None
+
+
+def generate_image_prompt(dm_response: str) -> str:
+    """
+    Generate an image prompt based on the DM's response.
+
+    Args:
+        dm_response (str): The DM's response to the player's message.
+
+    Returns:
+        str: A description of the scene to generate an image.
+    """
+    prompt = dm_response
+    payload = {"prompt": prompt}
+
+    try:
+        return "A dark forest with ancient ruins and a dragon in the distance."
+
+        response = requests.post(API_URL, json=payload)
+        response.raise_for_status()
+        result = response.json()
+        return result["response"]
+    except Exception as e:
+        print(f"Error generating image prompt: {e}")
+        return None

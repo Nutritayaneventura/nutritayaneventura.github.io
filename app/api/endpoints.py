@@ -27,5 +27,6 @@ async def chat_endpoint(chat: ChatInput):
     and returns the DM's response.
     """
     dm_response = llm_service.generate_dm_response(chat.message)
-    image_url = image_service.generate_image(dm_response)
+    image_prompt = llm_service.generate_image_prompt(dm_response)
+    image_url = image_service.generate_image(image_prompt)
     return {"message": dm_response, "image_url": image_url}
