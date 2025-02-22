@@ -19,9 +19,9 @@ def generate_image(prompt: str) -> str:
             "image_request": {
                 "prompt": prompt,
                 "aspect_ratio": "ASPECT_16_9",
-                "model": "V_2_TURBO",
+                "model": "V_2",
                 "magic_prompt_option": "ON",
-                "style_type": "ANIME",
+                "style_type": "REALISTIC",
                 "num_images": 1,
             }
         }

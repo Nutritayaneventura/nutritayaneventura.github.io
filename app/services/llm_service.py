@@ -37,14 +37,14 @@ class LlmService:
             )
 
             prompt = (
-                "Create a detailed image description in the style 'cinematic anime' for the following scene of a D&D game:\n"
+                "Create a detailed description of an image that will be used as background for the following scene of a D&D game:\n"
                 "<Scene Description Start>\n"
                 f"{dm_response}\n"
                 "<Scene Description End>\n"
-                "\nOutput only the image description. Use around 200 words."
+                "\nOutput only the image description. Use around 100 words."
             )
             ai_response = self.llm.invoke([HumanMessage(prompt)])
-            return ai_response.content
+            return "Image style: cinematic D&D adventure. " + ai_response.content
         except Exception as e:
             logger.log(f"Error generating image prompt: {e}")
             return None

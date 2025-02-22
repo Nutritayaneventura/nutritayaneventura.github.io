@@ -1,6 +1,6 @@
 # AI-RPG
 
-**AI-RPG** is a Dungeons & Dragons inspired game powered by AI. In this game, players interact with an AI Dungeon Master (DM) via a chat interface. The DM generates narrative responses using a large language model (LLM), while AI-generated images (via Stable Diffusion) and ambient soundtracks create an immersive experience.
+**AI-RPG** is a Dungeons & Dragons inspired game powered by AI. In this game, players interact with an AI Dungeon Master (DM) via a chat interface. The DM generates narrative responses using a large language model (LLM), while AI-generated images and ambient soundtracks create an immersive experience.
 
 ## Features
 
