@@ -11,8 +11,7 @@ logger = Logger()
 def generate_image(prompt: str) -> str:
     try:
         logger.log(f"Generating image...")
-        logger.log(f"Prompt: {prompt}")
-        return "https://www.larpinn.co.uk/img/ybc_blog/post/DungeonsnDragonsBanner.jpg"
+        logger.log(f"Image prompt: {prompt}")
 
         headers = {"Api-Key": API_KEY, "Content-Type": "application/json"}
         payload = {
@@ -20,8 +19,8 @@ def generate_image(prompt: str) -> str:
                 "prompt": prompt,
                 "aspect_ratio": "ASPECT_16_9",
                 "model": "V_2",
-                "magic_prompt_option": "ON",
-                "style_type": "REALISTIC",
+                "magic_prompt_option": "OFF",
+                "style_type": "GENERAL",
                 "num_images": 1,
             }
         }

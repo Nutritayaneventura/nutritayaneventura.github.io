@@ -6,7 +6,6 @@
 
 - **AI Dungeon Master:** Engage in interactive storytelling with an AI that drives the adventure.
 - **Image Generation:** Visualize game scenes dynamically through AI-powered image generation.
-- **Game Mechanics:** Enjoy built-in mechanics such as dice rolling and scene updates.
 - **Real-Time Chat:** Experience an interactive, web-based chat interface.
 - **Ambient Soundtrack:** Immerse yourself with looping, cool ambient music.
 
@@ -35,9 +34,6 @@ make install
 ### 3. Configure Environment Variables
 
 Ensure that your `.env` file in the project root contains the necessary variables:
-
-- `LLM_API_URL`
-- `IMAGE_API_URL`
 
 ### 4. Run the Application
 

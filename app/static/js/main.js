@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const muteToggle = document.getElementById('mute-toggle');
     const ambientAudio = document.getElementById('ambient-audio');
     const loadingIcon = document.getElementById('loading-icon');
+    const startButton = document.getElementById('start-button');
+    const storyJournal = document.querySelector('.story-journal');
+
+    storyJournal.classList.add('grayed-out');
+
     ambientAudio.volume = 0.7;
 
     muteToggle.addEventListener('click', () => {
@@ -23,10 +28,51 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    startButton.addEventListener('click', async (event) => {
+        event.preventDefault();
+        startButton.style.display = 'none';
+        chatForm.style.opacity = '1';
+        chatForm.style.pointerEvents = 'auto';
+        storyJournal.classList.remove('grayed-out');
+        loadingIcon.style.display = 'block';
+        chatForm.querySelector('button').disabled = true;
+        ambientAudio.muted = false;
+        ambientAudio.play().catch(error => {
+            console.error("Audio play failed:", error);
+        });
+        muteToggle.textContent = "🔊";
+        muteToggle.title = "Mute Audio";
+
+        try {
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: "" })
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            appendMessage('dm', data.message);
+            if (data.image_url) {
+                appendImage(data.image_url);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            appendMessage('dm', 'There was an error processing your request.');
+        } finally {
+            loadingIcon.style.display = 'none';
+            chatForm.querySelector('button').disabled = false;
+        }
+    });
+
     chatForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         const message = chatInput.value.trim();
         if (!message) return;
+        chatForm.querySelector('button').disabled = true;
         appendMessage('player', message);
         chatInput.value = '';
         loadingIcon.style.display = 'block';
@@ -52,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             appendMessage('dm', 'There was an error processing your request.');
         } finally {
             loadingIcon.style.display = 'none';
+            chatForm.querySelector('button').disabled = false;
         }
     });
 

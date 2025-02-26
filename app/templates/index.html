@@ -25,10 +25,11 @@
                 <div id="loading-icon" style="display: none;">
                     <img src="/static/images/loading.gif" alt="Loading..." />
                 </div>
+                <button id="start-button" class="start-button">Start Game</button>
             </div>
         </div>
-        <form id="chat-form">
-            <input type="text" id="chat-input" placeholder="Enter your action..." autocomplete="off" required />
+        <form id="chat-form" style="opacity: 0.5; pointer-events: none;">
+            <input type="text" id="chat-input" placeholder="Type your message here..." autocomplete="off" required />
             <button type="submit">Send</button>
         </form>
         <div class="image-container" id="image-container">
