@@ -2,7 +2,9 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from app.api import endpoints
 
-app = FastAPI(title="AI-RPG", description="AI Powered RPG", version="0.1.0")
+app = FastAPI(
+    title="Tay-Website", description="Tayane Ventura Nutricionista", version="1.0.0"
+)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(endpoints.router)
 

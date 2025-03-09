@@ -1,44 +1,1722 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI-RPG</title>
-    <link rel="stylesheet" href="/static/css/styles.css" />
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="/static/images/logos/tay.png">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://tayaneventura.com">
+  <meta property="og:title" content="Nutricionista Tayane Ventura">
+  <meta property="og:site_name" content="Nutricionista Tayane Ventura">
+
+
+  <meta property="og:description" content="Especialista Clínica ">
+  <meta name="description" content="Especialista Clínica " />
+
+
+  <meta property="og:image" content="nutricao.info/imgs/pics/tay.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/x-icon" href="/static/images/icons/favicon.ico" />
+
+  <title>Nutricionista Tayane Ventura </title>
+
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600|Roboto:400,500,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/sweetalert2.css">
+  <link rel="stylesheet" href="/static/css/emoji.css">
+
+  <script src="/static/js/jquery-3.3.1.min.js"> </script>
+  <script src="/static/js/bootstrap.min.js"> </script>
+  <script src="/static/js/sweetalert2.js"> </script>
+  <script src="/static/js/scripts.js"> </script>
+
+
+  <style type="text/css">
+    a {
+      text-decoration: none !important;
+      color: #444;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: none !important;
+      color: #C94E47 !important;
+    }
+
+    td {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    td:hover {
+      background: #333;
+    }
+
+    * {
+      font-family: 'Roboto', sans-serif;
+      font-smoothing: antialiased;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    h4 {
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+
+      background: #F2F2F2;
+    }
+
+    *:focus {
+      outline: none !important;
+    }
+
+    .form-control:focus {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    input::-webkit-contacts-auto-fill-button {
+      visibility: hidden;
+      display: none !important;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+    }
+
+    .header {
+
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      background: #444;
+    }
+
+    .padrao {
+
+      width: 100%;
+      max-width: 1200px;
+      text-align: left;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .titulo-1 {
+
+
+      background-image: url('bg1.png');
+      background-color: #EFEAEC;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+    }
+
+    .titulo-1>.title-pc {
+
+      display: inline-block;
+      width: 60%;
+      text-align: left;
+      vertical-align: top;
+      padding: 40px;
+    }
+
+    .titulo-1>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 75%;
+      padding-bottom: 40px;
+      display: none;
+
+    }
+
+
+    .titulo-2 {
+
+
+      background-image: url('/static/images/backgrounds/bg2.png');
+      background-color: #EBF0F2;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .titulo-2>.title-pc {
+
+      display: inline-block;
+      width: 55%;
+      text-align: left;
+      vertical-align: top;
+      padding: 40px;
+    }
+
+    .titulo-2>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 65%;
+      padding-bottom: 40px;
+      display: none;
+
+    }
+
+
+    .titulo-3 {
+
+
+      background-image: url('bg3.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .titulo-3>.title-pc {
+
+      display: inline-block;
+      width: 65%;
+      text-align: left;
+      vertical-align: top;
+      padding: 40px;
+    }
+
+    .titulo-3>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 80%;
+      padding-bottom: 40px;
+      display: none;
+
+    }
+
+
+    .titulo-4 {
+
+
+      background-image: url('bg4.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-4>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 40px;
+    }
+
+    .titulo-4>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-5 {
+
+
+      background-image: url('bg5.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #444;
+    }
+
+    .titulo-5>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 20%;
+
+    }
+
+    .titulo-5>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 10%;
+      padding-bottom: 50%;
+      display: none;
+
+    }
+
+
+    .titulo-6 {
+
+      background-image: url('bg6.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-6>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 10% 50px;
+
+    }
+
+    .titulo-6>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 30%;
+      padding-bottom: 30%;
+      display: none;
+
+    }
+
+
+    .titulo-7 {
+
+
+      background-image: url('bg7.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center -100px;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-7>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 10% 50px;
+
+    }
+
+    .titulo-7>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-8 {
+
+
+      background-image: url('bg8.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-8>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 10% 50px;
+
+    }
+
+    .titulo-8>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-9 {
+
+
+      background-image: url('bg9.png');
+      background-color: #E3F0E0;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      color: #444;
+    }
+
+    .titulo-9>.title-pc {
+
+      display: inline-block;
+      width: 70%;
+      text-align: left;
+      vertical-align: top;
+      padding: 10% 50px;
+
+    }
+
+    .titulo-9>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 85%;
+      padding-bottom: 10%;
+      display: none;
+
+    }
+
+    .titulo-10 {
+
+
+      background-image: url('bg10.png');
+      background-color: #F1E68E;
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: no-repeat;
+      color: #444;
+    }
+
+    .titulo-10>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 50px;
+      padding-top: 15%;
+      padding-bottom: 5%;
+
+    }
+
+    .titulo-10>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 85%;
+      padding-bottom: 10%;
+      display: none;
+
+    }
+
+    .titulo-11 {
+
+
+      background-image: url('bg11.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-11>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 10% 50px;
+
+    }
+
+    .titulo-11>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+    .titulo-12 {
+
+
+      background-image: url('bg12.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #444;
+    }
+
+    .titulo-12>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 20%;
+
+    }
+
+    .titulo-12>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 10%;
+      padding-bottom: 50%;
+      display: none;
+
+    }
+
+
+
+
+    .titulo-13 {
+
+
+      background-image: url('bg13.png');
+      background-color: #E2E7E4;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #444;
+    }
+
+    .titulo-13>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 80px;
+      padding-bottom: 25%;
+
+    }
+
+    .titulo-13>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 10%;
+      padding-bottom: 60%;
+      display: none;
+
+    }
+
+
+
+    .titulo-14 {
+
+
+      background-image: url('bg14.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-14>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 5%;
+
+    }
+
+    .titulo-14>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-15 {
+
+
+      background-image: url('bg15.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-15>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 10%;
+
+    }
+
+    .titulo-15>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-16 {
+
+
+      background-image: url('bg16.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .titulo-16>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 5%;
+
+    }
+
+    .titulo-16>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-17 {
+
+      background-image: url('bg17.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #333;
+    }
+
+    .titulo-17>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 5%;
+
+    }
+
+    .titulo-17>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 45%;
+      padding-bottom: 20%;
+      display: none;
+
+    }
+
+
+    .titulo-18 {
+
+
+      background-image: url('bg18.png');
+      background-color: #F4F4F2;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #333;
+    }
+
+    .titulo-18>.title-pc {
+
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      vertical-align: top;
+      padding: 50px;
+      padding-bottom: 10%;
+
+    }
+
+    .titulo-18>.title-mobile {
+
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 5%;
+      padding-top: 5%;
+      padding-bottom: 80%;
+      display: none;
+
+    }
+
+
+
+
+
+    .formacao-1 {
+
+      width: 100%;
+      padding: 40px;
+      font-size: 13pt;
+      text-align: center;
+      background: #fff;
+      color: #444;
+      line-height: 200%;
+      border-top: 2px solid #eee;
+    }
+
+    .servicos-1 {
+
+      width: 100%;
+      padding: 40px;
+      background: #FAFAFA;
+      color: #444;
+      text-align: center;
+      border-top: 2px solid #eee;
+    }
+
+    .servicos-card {
+
+      padding: 20px 40px;
+      background: #fff;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      margin: 0px 10px 20px 10px;
+      cursor: pointer;
+      vertical-align: top;
+      transition: all 0.2s ease;
+    }
+
+    .servicos-card:hover {
+      background: #eee;
+      color: #000;
+    }
+
+    .actions-1 {
+
+      width: 100%;
+      padding: 40px;
+      background: #FAFAFA;
+      color: #444;
+      text-align: center;
+      border-top: 2px solid #eee;
+    }
+
+    .social {
+
+      width: 230px;
+      padding: 20px;
+      background: #fff;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      margin: 0px 10px 20px 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .social:hover {
+      background: #eee;
+      color: #000;
+    }
+
+
+    .contact-1 {
+
+      width: 100%;
+      padding: 40px;
+      background: #FAFAFA;
+      color: #444;
+      text-align: center;
+      border-top: 2px solid #eee;
+    }
+
+    .contact-card {
+
+      width: calc(50% - 5px);
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .contact-card-right-pc {
+      display: inline-block;
+    }
+
+    .contact-card-right-mobile {
+      display: none
+    }
+
+    .botao {
+
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #444;
+      cursor: pointer;
+      margin-top: 5px;
+      border: 2px solid #eee;
+      transition: all 0.2s ease;
+    }
+
+    .botao:hover {
+      background: #eee;
+      color: #000;
+    }
+
+    .conjunto-input {
+
+      height: 60px;
+      padding: 0px 10px;
+      background: #fff;
+      border: none;
+      text-align: left;
+      display: inline-block;
+      border-radius: 5px;
+      line-height: 100%;
+      vertical-align: top;
+      position: relative;
+      margin-bottom: 5px;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      /*border: 1px solid #e4e4e4;*/
+    }
+
+    .conjunto-input input,
+    textarea,
+    select {
+      width: 100%;
+      height: 60px;
+      margin-top: 0px;
+      color: #444;
+      font-size: 16px;
+      border: none;
+      background: none;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .grecaptcha-badge {
+      display: none;
+    }
+
+    @media only screen and (max-width: 800px) {
+
+      .titulo-1 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: 220% auto;
+        background-position: right top;
+      }
+
+      .titulo-1>.title-pc {
+        display: none;
+      }
+
+      .titulo-1>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-2 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: 220% auto;
+        background-position: right top;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-2>.title-pc {
+        display: none;
+      }
+
+      .titulo-2>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-3 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: 200% auto;
+        background-position: right top;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-3>.title-pc {
+        display: none;
+      }
+
+      .titulo-3>.title-mobile {
+        display: inline-block;
+      }
+
+      .titulo-4 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: auto 100%;
+        background-position: center top;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-4>.title-pc {
+        display: none;
+      }
+
+      .titulo-4>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-5 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-5>.title-pc {
+        display: none;
+      }
+
+      .titulo-5>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-6 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-6>.title-pc {
+        display: none;
+      }
+
+      .titulo-6>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-7 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: auto 100%;
+        background-position: 20% bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-7>.title-pc {
+        display: none;
+      }
+
+      .titulo-7>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-8 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-8>.title-pc {
+        display: none;
+      }
+
+      .titulo-8>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-9 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: 200% auto;
+        background-position: right top;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-9>.title-pc {
+        display: none;
+      }
+
+      .titulo-9>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-10 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: 200% auto;
+        background-position: right top;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-10>.title-pc {
+        display: none;
+      }
+
+      .titulo-10>.title-mobile {
+        display: inline-block;
+      }
+
+      .titulo-11 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-11>.title-pc {
+        display: none;
+      }
+
+      .titulo-11>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-12 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-12>.title-pc {
+        display: none;
+      }
+
+      .titulo-12>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-13 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-13>.title-pc {
+        display: none;
+      }
+
+      .titulo-13>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-14 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-14>.title-pc {
+        display: none;
+      }
+
+      .titulo-14>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-15 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-15>.title-pc {
+        display: none;
+      }
+
+      .titulo-15>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .titulo-16 {
+
+        margin-top: 0px;
+        height: auto;
+        background-size: cover;
+        background-position: -300px 100px;
+        background-color: #88CAD6;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-16>.title-pc {
+        display: none;
+      }
+
+      .titulo-16>.title-mobile {
+        display: inline-block;
+      }
+
+
+
+      .titulo-17 {
+
+        margin-top: 0px;
+        height: auto;
+        background-image: url('bg17-m.png');
+        background-size: cover;
+        background-position: right top;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-17>.title-pc {
+        display: none;
+      }
+
+      .titulo-17>.title-mobile {
+        display: inline-block;
+      }
+
+
+
+      .titulo-18 {
+
+        margin-top: 0px;
+        height: auto;
+        background-image: url('bg18-m.png');
+        background-size: cover;
+        background-position: center bottom;
+        border-bottom: 1px solid #eee;
+      }
+
+      .titulo-18>.title-pc {
+        display: none;
+      }
+
+      .titulo-18>.title-mobile {
+        display: inline-block;
+      }
+
+
+      .formacao-1 {
+
+        width: 100%;
+        padding: 8%;
+        padding-top: 10%;
+        font-size: 13pt;
+        text-align: center;
+        background: #fff;
+        color: #444;
+      }
+
+      #formacao-esquerda {
+        width: 100% !important;
+        margin-top: 30px;
+        text-align: center !important;
+      }
+
+      #formacao-direita {
+        width: 100% !important;
+        margin-top: 40px;
+      }
+
+      .servicos-1 {
+
+        padding-top: 10%;
+
+      }
+
+      .servicos-card {
+
+        width: 100%;
+        padding: 20px;
+        margin: 0px 0px 10px 0px;
+
+      }
+
+      .actions-1 {
+
+        padding-top: 10%;
+
+      }
+
+      .social {
+
+        width: 80%;
+        margin: 0px 0px 20px 0px;
+      }
+
+      .contact-card {
+
+        width: 100%;
+      }
+
+      .contact-card-right-pc {
+        display: none;
+      }
+
+      .contact-card-right-mobile {
+        display: inline-block;
+      }
+
+    }
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121420754-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-121420754-2');
+	</script> -->
 </head>
 
 <body>
-    <header>
-        <img src="/static/images/banner.webp" alt="AI-RPG Banner" class="banner">
-        <div class="header-content">
-            <h1>AI Powered RPG</h1>
-            <audio id="ambient-audio" src="/static/audio/ambient.mp3" autoplay loop muted></audio>
-            <button id="mute-toggle" title="Unmute Audio">🔇</button>
+
+  <div
+    style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(255,255,255,0.8); text-align: center; color: #fff; z-index: 9999; display: none; transition: all 0.5s ease"
+    id="aguardeToast"><img src="/static/images/icons/loading.svg"
+      style="position: absolute; top: calc(50% - 25px); left: calc(50% - 25px); width: 50px;"></div>
+  <div
+    style="position: fixed; top: -60px; left: 0px; width: 100%; height: 60px; background: #8FD566; text-align: center; color: #fff; z-index: 9999; font-weight: 600; line-height: 60px; display: none; transition: all 0.5s ease"
+    id="sucessoToast">Concluido com sucesso!</div>
+  <div
+    style="position: fixed; top: -60px; left: 0px; width: 100%; height: 60px; background: #BC564C; text-align: center; color: #fff; z-index: 9999; font-weight: 600; line-height: 60px; display: none; transition: all 0.5s ease"
+    id="erroToast">Falha! Tente novamente.</div>
+
+
+  <div
+    style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: #fafafa; text-align: center; z-index: 9998; display: none"
+    id="mailingModal">
+
+    <div style="position: absolute; top: 15px; left: calc(100% - 50px); width: 40px; height: 40px; cursor: pointer;"
+      onclick="fechar()"><img src="/static/images/icons/close.png" style="width: 30px;"></div>
+
+    <div style="width: 90%; max-width: 500px; margin-top: 50px; text-align: center; display: inline-block;">
+
+      <div style="font-size: 30px; font-weight: 600; margin-bottom: 20px;">Lista de emails</div>
+
+
+      Deixe seu email abaixo para receber gratuitamente todas as novidades e dicas em primeira mão. Se já
+      cadastrou, não é necessário cadastrar novamente.
+
+      <br><br><br>
+
+      <div style="width: 100%;" class="conjunto-input">
+        <div
+          style="margin-top: 8px; color: #444; font-size: 12px; font-weight: 500; display: inline-block; color: #888">
+          Seu nome completo</div>
+        <input type="text" style="margin-top: -15px;" autocomplete="off" id="nomeMailing">
+      </div>
+
+      <br>
+
+      <div style="width: 100%;" class="conjunto-input">
+        <div
+          style="margin-top: 8px; color: #444; font-size: 12px; font-weight: 500; display: inline-block; color: #888">
+          Seu email de contato</div>
+        <input type="email" style="margin-top: -15px;" autocomplete="off" id="emailMailing">
+      </div>
+
+      <br>
+
+      <div class="botao" style="width: 100%; background: #8FD566; border: 0px; color: #fff; font-weight: 600;"
+        onclick="confirmarMailing()">Confirmar cadastro</div>
+
+
+    </div>
+  </div>
+
+  <div
+    style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: #fafafa; text-align: center; z-index: 9998; display: none"
+    id="detalhesModal">
+
+    <div style="position: absolute; top: 15px; left: calc(100% - 50px); width: 40px; height: 40px; cursor: pointer;"
+      onclick="fechar()"><img src="/static/images/icons/close.png" style="width: 30px;"></div>
+
+    <div style="width: 70%; font-size: 30px; font-weight: 600; margin-top: 50px; display: inline-block;"
+      id="detalhesTitulo"></div><br><br>
+
+    <div
+      style="width: 90%; max-width: 500px; height: calc(100% - 150px); overflow-y: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; margin-top: 20px; text-align: center; display: inline-block;"
+      id="detalhesTexto"></div>
+  </div>
+
+  <center>
+
+
+    <div class="padrao titulo-2">
+
+
+      <div class="title-pc">
+        <div
+          style="width: 500px; height: 150px; display: inline-block; background-image: url('/static/images/logos/tay.png'); background-size: contain; background-repeat: no-repeat; background-position: left center">
+        </div><br><br>
+      </div>
+
+      <div class="title-mobile">
+        <div
+          style="width: 100%; height: 160px; display: inline-block; background-image: url('/static/images/logos/tay.png'); background-size: contain; background-repeat: no-repeat; background-position: center center;">
+        </div><br><br>
+      </div>
+
+    </div>
+
+
+
+    <div class="padrao formacao-1">
+
+      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
+        SOBRE MIM</div>
+
+
+      <div style="width: calc(70% - 5px); text-align: left; display: inline-block; vertical-align: middle;"
+        id="formacao-esquerda">Meu nome é Tayane Ventura e sou uma nutricionista clínica apaixonada por ajudar
+        meus pacientes a alcançarem seus objetivos de saúde e nutrição. Minha abordagem é fundamentada na
+        empatia, compreensão e conhecimento científico, visando oferecer o melhor suporte possível em sua
+        jornada.</div>
+
+      <div style="width: calc(30% - 5px); text-align: center; display: inline-block; vertical-align: middle"
+        id="formacao-direita">
+        <div
+          style="width: 220px; height: 220px; display: inline-block; border-radius: 220px; background-image: url('/static/images/pics/tay.jpg'); background-size: cover; background-position: center top">
         </div>
-    </header>
-    <main>
-        <div class="story-journal">
-            <h2>Story Journal</h2>
-            <div class="chat-container" id="chat-container">
-                <div id="loading-icon" style="display: none;">
-                    <img src="/static/images/loading.gif" alt="Loading..." />
-                </div>
-                <button id="start-button" class="start-button">Start Game</button>
-            </div>
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="padrao servicos-1">
+
+      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
+        SERVIÇOS</div><br>
+
+
+      <div class="servicos-card" onclick="servicosDetalhes(0)">Avaliação física</div>
+
+
+      <div class="servicos-card" onclick="servicosDetalhes(1)">Plano Alimentar</div>
+
+
+      <div class="servicos-card" onclick="servicosDetalhes(2)">Consultoria Semanal online</div>
+
+
+      <div class="servicos-card" onclick="servicosDetalhes(3)">Ofereço materiais de apoio como e-books de receitas
+        e lâminas de orientações</div>
+
+
+      <div class="servicos-card" onclick="servicosDetalhes(4)">Faço solicitação e leitura de exames bioquímicos
+        (exame de sangue). </div>
+
+
+    </div>
+
+
+
+
+    <div class="padrao actions-1">
+
+      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
+        REDES SOCIAIS</div><br>
+
+      <div class="social" id="whatsappButton" onclick="LinkUrl('https://api.whatsapp.com/send?phone=5521981938331')">
+        <img src="/static/images/logos/whatsapp.png" style="width: 80%; max-width: 100px"><br><br>Envie uma mensagem
+      </div>
+      <div class="social" onclick="LinkUrl('https://instagram.com/tayaneventura.nutri')"><img
+          src="/static/images/logos/instagram.png" style="width: 80%; max-width: 100px"><br><br>@tayaneventura.nutri
+      </div>
+    </div>
+
+
+
+    <div class="padrao contact-1">
+
+      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
+        CONTATO</div><br>
+
+
+      <div class="contact-card">
+
+        <div style="width: 100%;" class="conjunto-input">
+          <div
+            style="margin-top: 8px; color: #444; font-size: 12px; font-weight: 500; display: inline-block; color: #888">
+            Seu nome completo</div>
+          <input type="text" style="margin-top: -15px;" autocomplete="off" id="nome">
         </div>
-        <form id="chat-form" style="opacity: 0.5; pointer-events: none;">
-            <input type="text" id="chat-input" placeholder="Type your message here..." autocomplete="off" required />
-            <button type="submit">Send</button>
-        </form>
-        <div class="image-container" id="image-container">
+
+        <br>
+
+        <div style="width: 100%;" class="conjunto-input">
+          <div
+            style="margin-top: 8px; color: #444; font-size: 12px; font-weight: 500; display: inline-block; color: #888">
+            Telefone para contato</div>
+          <input type="tel" style="margin-top: -15px;" autocomplete="off" id="telefone">
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 AI-RPG</p>
-    </footer>
-    <script src="/static/js/main.js"></script>
+
+        <br>
+
+        <div style="width: 100%;" class="conjunto-input">
+          <div
+            style="margin-top: 8px; color: #444; font-size: 12px; font-weight: 500; display: inline-block; color: #888">
+            Email para retorno</div>
+          <input type="email" style="margin-top: -15px;" autocomplete="off" id="email">
+        </div>
+
+        <br>
+
+        <div style="width: 100%; height: auto" class="conjunto-input">
+          <div
+            style="margin-top: 8px; color: #444; font-size: 12px; font-weight: 500; display: inline-block; color: #888">
+            Escreva sua mensagem</div>
+          <textarea style="height: 90px; margin-top: 3px; margin-left: -2px" id="msg" autocomplete="off"></textarea>
+        </div>
+
+        <br>
+
+        <div class="botao" style="width: 100%; background: #8FD566; border: 0px; color: #fff; font-weight: 600;"
+          onclick="enviarMensagem()">Enviar mensagem</div>
+
+
+      </div>
+
+
+
+      <div class="contact-card">
+
+        <div style="width: 90%;" class="contact-card-right-pc">
+
+
+
+          <div
+            style="display: inline-block; width: 15%; margin-right: -10px; text-align: center; font-size: 40px; vertical-align: middle;">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+          </div><br>
+          <div style="display: inline-block;  text-align: center; font-size: 17px; vertical-align: middle;">
+            Av. das Américas, 500 - Barra da Tijuca, Rio de Janeiro - RJ, 22640-100</div><br><br>
+
+
+          <div
+            style="display: inline-block; width: 15%; margin-right: -10px; text-align: center; font-size: 40px; vertical-align: middle;">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </div><br>
+          <div style="display: inline-block;  text-align: center; font-size: 17px; vertical-align: middle;">
+            21981938331</div><br><br>
+
+
+          <div
+            style="display: inline-block; width: 15%; margin-right: -10px; text-align: center; font-size: 35px; vertical-align: middle;">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div><br>
+          <div style="display: inline-block;  text-align: center; font-size: 17px; vertical-align: middle;">
+            tayventura20@gmail.com</div>
+
+
+        </div>
+
+        <div style="width: 90%;" class="contact-card-right-mobile">
+
+          <br>
+          <hr>
+          <div style="font-size: 40px"><i class="fa fa-map-marker" aria-hidden="true"></i></div> Av. das
+          Américas, 500 - Barra da Tijuca, Rio de Janeiro - RJ, 22640-100 <br><br>
+          <div style="font-size: 40px"><i class="fa fa-phone" aria-hidden="true"></i></div>21981938331
+          <br><br>
+          <div style="font-size: 40px"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+          tayventura20@gmail.com
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <br>
+
+    <span style="font-size: 12px; color: #999">Todos os direitos estão reservados.</span>
+
+    <br><br>
+
+  </center>
+
 </body>
+
+
+
+
+<script type="text/javascript">
+
+
+  $(document).ready(function () {
+
+    servicos = [{ "titulo": "Avalia%C3%A7%C3%A3o%20f%C3%ADsica", "descricao": "%20Realizo%20duas%20avalia%C3%A7%C3%B5es%20f%C3%ADsica:%20%0A-%20Uso%20a%20balan%C3%A7a%20de%20bioimped%C3%A2ncia%20para%20avaliar%20os%20compartimentos%20de%20gordura,%20m%C3%BAsculo%20e%20l%C3%ADquido%20corporal%20junto%20com%20avalia%C3%A7%C3%B5es%20de%20Perimetria%20Corporal%20e%20Dobras%20Cut%C3%A2neas." }, { "titulo": "Plano%20Alimentar", "descricao": "Monto%20um%20plano%20alimentar%20personalizado%20e%20individual%20de%20forma%20que%20voc%C3%AA%20consiga%20seguir,%20respeitando%20sua%20rotina,%20condi%C3%A7%C3%A3o%20socioecon%C3%B4mica,%20cultura%20e%20necessidades.%20" }, { "titulo": "Consultoria%20Semanal%20online", "descricao": "Acompanho%20voc%C3%AA%20semanalmente%20por%20WhatsApp,%20auxiliando%20nas%20suas%20dificuldades%20e%20juntos%20criando%20estrat%C3%A9gias%20para%20superar%20seus%20desafios,%20afim%20de%20chegarmos%20ao%20nosso%20objetivo.%20" }, { "titulo": "Ofere%C3%A7o%20materiais%20de%20apoio%20como%20e-books%20de%20receitas%20e%20l%C3%A2minas%20de%20orienta%C3%A7%C3%B5es", "descricao": "Sabe%20aquela%20vontade%20de%20comer%20algo%20saboroso%20e%20sem%20culpa%20?%20Os%20e-books%20de%20receitas%20saud%C3%A1veis%20%20ser%C3%A3o%20seus%20aliados%20nesse%20processo%20de%20mudan%C3%A7a%20de%20h%C3%A1bitos.%20;)" }, { "titulo": "Fa%C3%A7o%20solicita%C3%A7%C3%A3o%20e%20leitura%20de%20exames%20bioqu%C3%ADmicos%20(exame%20de%20sangue).%20", "descricao": "%20Seu%20exame%20deu%20alterado%20e%20voc%C3%AA%20n%C3%A3o%20sabe%20como%20melhorar%20?%20Posso%20te%20ajudar%20nesse%20processo.%20" }];
+
+    regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    var mobile = checkMobile();
+
+
+    if (mobile) { $("#whatsappButton").attr("onclick", "location.href='whatsapp://send?phone=5521981938331'"); }
+
+
+  })
+
+  function mailing() {
+
+    $("#mailingModal").fadeIn(200)
+
+  }
+
+  function confirmarMailing() {
+
+    var nomeMailing = $("#nomeMailing").val();
+    var emailMailing = $("#emailMailing").val();
+
+    if (nomeMailing == "" || emailMailing == "") { alert("Preencha todos os campos do formulário."); return; }
+    if (regex.test(emailMailing) == false) { alert("O email está no formato incorreto."); return; }
+
+    aguarde()
+
+    $.post("https://nutricao.info/api/mailing.php", { t: 'vhbVROblULubUFImq8fwmhiQy8rREQu4AbIB2y90TCqImRdt8AxRoagW1oRY66', n: 'SHBvKioxNTU0MjYqKm5wbQ==', nome: nomeMailing, email: emailMailing })
+      .done(function (data) {
+        console.log(data)
+        if (data.trim() == "ok") {
+
+          $("#nomeMailing").val("")
+          $("#emailMailing").val("")
+          fechar();
+          sucesso();
+
+        } else {
+          erro();
+        }
+      })
+
+  }
+
+  function fechar() {
+
+    $("#mailingModal").fadeOut(200)
+    $("#detalhesModal").fadeOut(200)
+
+  }
+
+  function mensagem() {
+
+    $("#nome").focus();
+    $("html, body").animate({ scrollTop: $(document).height() - $(window).height() });
+  }
+
+  function servicosDetalhes(a) {
+
+    if (servicos[a]['descricao'] != "") {
+
+      $("#detalhesTitulo").html(decodeURI(servicos[a]['titulo']));
+      $("#detalhesTexto").html(decodeURI(servicos[a]['descricao']));
+      $("#detalhesModal").fadeIn(200)
+    }
+  }
+
+
+  function enviarMensagem() {
+
+    var nome = $("#nome").val();
+    var telefone = $("#telefone").val();
+    var email = $("#email").val();
+    var msg = encodeURI($("#msg").val());
+
+    if (nome == "" || email == "" || msg == "") { alert("Preencha todos os campos do formulário."); return; }
+    if (regex.test(email) == false) { alert("O email está no formato incorreto."); return; }
+
+    aguarde()
+
+    $.post("https://nutricao.info/api/email.php", { t: 'vhbVROblULubUFImq8fwmhiQy8rREQu4AbIB2y90TCqImRdt8AxRoagW1oRY66', n: 'T21DKioxNTU0MjYqKlE3Mg==', nome: nome, telefone: telefone, email: email, msg: msg })
+      .done(function (data) {
+        console.log(data);
+        if (data.trim() == "ok") {
+
+          $("#nome").val("")
+          $("#telefone").val("")
+          $("#email").val("")
+          $("#msg").val("")
+          sucesso();
+
+        } else {
+          erro();
+        }
+      })
+
+  }
+
+  function checkMobile() {
+    var check = false;
+    (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
+    return check;
+  };
+
+  function sucesso() {
+
+    $("#aguardeToast").fadeOut(50);
+
+    $("#sucessoToast").show();
+    $("#sucessoToast").css("top", "0px");
+
+    setTimeout(function () {
+
+      $("#sucessoToast").css("top", "-60px");
+      $("#sucessoToast").delay(500).fadeOut(0);
+    }, 3000)
+  }
+
+  function erro() {
+
+    $("#aguardeToast").fadeOut(50);
+
+    $("#erroToast").show();
+    $("#erroToast").css("top", "0px");
+
+    setTimeout(function () {
+
+      $("#erroToast").css("top", "-60px");
+      $("#erroToast").delay(500).fadeOut(0);
+    }, 3000)
+  }
+
+  function aguarde() {
+
+    $("#aguardeToast").fadeIn(200);
+
+  }
+
+
+</script>
+
 
 </html>
