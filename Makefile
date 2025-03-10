@@ -11,4 +11,4 @@ install:
 
 # Run the application
 run:
-	$(UVICORN) app.main:app --host 0.0.0.0 --port 8000 --reload
+	$(UVICORN) docs.main:app --host 0.0.0.0 --port 8000 --reload

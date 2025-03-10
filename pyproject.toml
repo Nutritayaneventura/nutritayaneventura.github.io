@@ -1,13 +1,12 @@
 [tool.poetry]
 name = "tay-website"
 version = "1.0.0"
-description = "Tayane Ventura Nutricionista"
+description = "Website Nutri Tayane Ventura"
 authors = ["Brenno Lins"]
-license = "MIT"
 
-# Tell Poetry to include the "app" folder as the package.
+# Tell Poetry to include the "docs" folder as the package.
 packages = [
-    { include = "app" }
+    { include = "docs" }
 ]
 
 [tool.poetry.dependencies]
