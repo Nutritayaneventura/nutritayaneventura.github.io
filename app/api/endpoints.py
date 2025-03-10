@@ -14,4 +14,4 @@ async def read_index(request: Request):
 
 @router.get("/health", summary="Health Check")
 async def health_check():
-    return {"status": "ok", "message": "Website is healthy!"}
+    return {"status": "ok", "message": "Website is healthy"}
