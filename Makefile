@@ -1,5 +1,3 @@
-# Makefile for AI-RPG
-
 # Variables
 UVICORN=poetry run uvicorn
 
