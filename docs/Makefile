@@ -1,9 +1,5 @@
-.PHONY: install run
+.PHONY: run
 
-# Install dependencies
-install:
-	poetry install
-
-# Run the application (run it from the docs directory)
+# Run the application locally (run from 'docs' directory)
 run:
 	$ python -m http.server 8000
