@@ -1,148 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 
 <head>
-  <meta charset="utf-8">
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:url" content="https://nutritayaneventura.github.io/">
-  <meta property="og:title" content="Nutricionista Tayane Ventura">
-  <meta property="og:site_name" content="Nutricionista Tayane Ventura">
-  <meta property="og:description" content="Especialista Clínica">
-  <meta name="description" content="Especialista Clínica" />
-  <meta property="og:image" content="/images/pics/tay.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="600">
-  <meta property="og:image:height" content="600">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico" />
-  <title>Nutricionista Tayane Ventura </title>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Especialista Clínica" />
+    <meta name="keywords" content="nutricionista, rio de janeiro, online" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Nutricionista Tayane Ventura">
+    <meta property="og:description" content="Especialista Clínica" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nutricionista Tayane Ventura">
+    <meta property="og:url" content="https://nutritayaneventura.github.io/">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="/images/tay.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="300">
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <title>Nutricionista Tayane Ventura </title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-color: #604b42;
+            --secondary-color: #4c5b4c;
+            --accent-color: #a57a6f;
+            --light-color: #ffffff;
+            --dark-color: #333333;
+            --text-color: #333333;
+            --light-gray: #f0f0f0;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: var(--text-color);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+
+    <!-- Non-critical CSS with preload strategy -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="styles.css" />
+    </noscript>
+
+    <!-- Font Awesome with display=swap for better performance -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    </noscript>
+
+    <!-- Google Fonts with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nutritayaneventura.github.io/" />
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
 
-  <div
-    style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(255,255,255,0.8); text-align: center; color: #fff; z-index: 9999; display: none; transition: all 0.5s ease"
-    id="aguardeToast"><img src="/images/icons/loading.svg"
-      style="position: absolute; top: calc(50% - 25px); left: calc(50% - 25px); width: 50px;"></div>
-  <div
-    style="position: fixed; top: -60px; left: 0px; width: 100%; height: 60px; background: #8FD566; text-align: center; color: #fff; z-index: 9999; font-weight: 600; line-height: 60px; display: none; transition: all 0.5s ease"
-    id="sucessoToast">Concluido com sucesso!</div>
-  <div
-    style="position: fixed; top: -60px; left: 0px; width: 100%; height: 60px; background: #BC564C; text-align: center; color: #fff; z-index: 9999; font-weight: 600; line-height: 60px; display: none; transition: all 0.5s ease"
-    id="erroToast">Falha! Tente novamente.</div>
-
-  <div
-    style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: #fafafa; text-align: center; z-index: 9998; display: none"
-    id="detalhesModal">
-
-    <div style="position: absolute; top: 15px; left: calc(100% - 50px); width: 40px; height: 40px; cursor: pointer;"
-      onclick="fechar()"><img src="/images/icons/close.png" style="width: 30px;"></div>
-
-    <div style="width: 70%; font-size: 30px; font-weight: 600; margin-top: 50px; display: inline-block;"
-      id="detalhesTitulo"></div><br><br>
-
-    <div
-      style="width: 90%; max-width: 500px; height: calc(100% - 150px); overflow-y: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; margin-top: 20px; text-align: center; display: inline-block;"
-      id="detalhesTexto"></div>
-  </div>
-
-  <center>
-
-
-    <div class="padrao titulo-2">
-
-
-      <div class="title-pc">
-        <div
-          style="width: 500px; height: 150px; display: inline-block; background-image: url('/images/logos/tay.png'); background-size: contain; background-repeat: no-repeat; background-position: left center">
-        </div><br><br>
-      </div>
-
-      <div class="title-mobile">
-        <div
-          style="width: 100%; height: 160px; display: inline-block; background-image: url('/images/logos/tay.png'); background-size: contain; background-repeat: no-repeat; background-position: center center;">
-        </div><br><br>
-      </div>
-
-    </div>
-
-
-    <div class="padrao formacao-1">
-
-      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
-        SOBRE MIM</div>
-
-
-      <div style="width: calc(70% - 5px); text-align: left; display: inline-block; vertical-align: middle;"
-        id="formacao-esquerda">Meu nome é Tayane Ventura e sou uma nutricionista clínica apaixonada por ajudar
-        meus pacientes a alcançarem seus objetivos de saúde e nutrição. Minha abordagem é fundamentada na
-        empatia, compreensão e conhecimento científico, visando oferecer o melhor suporte possível em sua
-        jornada.</div>
-
-      <div style="width: calc(30% - 5px); text-align: center; display: inline-block; vertical-align: middle"
-        id="formacao-direita">
-        <div
-          style="width: 220px; height: 220px; display: inline-block; border-radius: 220px; background-image: url('/images/pics/tay.jpg'); background-size: cover; background-position: center top">
+    <header role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="#home" aria-label="Go to home page">
+                    <img src="/images/logo.png" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <nav role="navigation" aria-label="Main navigation">
+                <button class="menu" aria-expanded="false" aria-label="Toggle navigation menu" aria-controls="nav-list">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li class="active" data-tab="home">
+                        <a href="#home">Sobre mim</a>
+                    </li>
+                    <li data-tab="services"><a href="#services">Serviços</a></li>
+                    <li data-tab="books"><a href="#books">E-Books</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
+    <main id="main-content" role="main">
+        <div class="container">
+            <!-- Home Tab -->
+            <section id="home" class="tab-content active">
+                <h2>Nutrição para uma <span>vida equilibrada</span></h2>
+                <div class="hero">
+                    <img src="/images/tay.jpg" alt="Nutricionista Tayane Ventura" width="800" height="400"
+                        loading="eager" />
+                    <div class="hero-text">
+                        <h3>Sobre mim</h3>
+                        <p>
+                            Meu nome é Tayane Ventura e sou uma nutricionista clínica apaixonada por ajudar
+                            meus pacientes a alcançarem seus objetivos de saúde e nutrição.
+                        </p>
+                        <p>
+                            Minha abordagem é fundamentada na empatia, compreensão e conhecimento científico,
+                            visando oferecer o melhor suporte possível em sua jornada.
+                        </p>
+                        <a href="#" class="btn whatsapp-service" data-service="consulta">Agendar consulta</a>
+                    </div>
+                </div>
+                <div class="features">
+                    <a href="#" class="feature-link whatsapp-service" data-service="consulta">
+                        <article class="feature-card">
+                            <i class="fas fa-wifi" aria-hidden="true"></i>
+                            <h3>Atendimento Online</h3>
+                            <p>
+                                Consultas remotas para sua praticidade e suporte contínuo.
+                            </p>
+                        </article>
+                    </a>
+                    <a href="#books" class="feature-link">
+                        <article class="feature-card">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            <h3>Receitas</h3>
+                            <p>
+                                E-books com receitas saborosas para uma alimentação saudável.
+                            </p>
+                        </article>
+                    </a>
+                    <a href="https://www.instagram.com/tayaneventura.nutri" target="_blank" rel="noopener noreferrer"
+                        class="feature-link">
+                        <article class="feature-card">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <h3>Instagram</h3>
+                            <p>
+                                Dicas de nutrição e saúde no meu perfil no Instagram.
+                            </p>
+                        </article>
+                    </a>
+                </div>
+            </section>
 
-    </div>
+            <!-- E-Books Tab -->
+            <section id="books" class="tab-content">
+                <h2>Receitas Saudáveis e Saborosas</h2>
+                <div class="products-grid">
 
+                    <!-- E-Book 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1704642154533-22893ca3c1ac?auto=format&fit=crop&w=500"
+                                alt="E-Book 1 cover" width="500" height="300" loading="lazy" />
+                        </div>
+                        <div class="product-info">
+                            <h3>E-Book</h3>
+                            <p>Diversas receitas para o seu dia a dia.</p>
+                            <div class="product-order-form">
+                                <button class="btn-small whatsapp-btn" data-product-id="book1"
+                                    data-product-name="E-Book">
+                                    <i class="fab fa-whatsapp"></i> Comprar pelo WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </article>
 
-    <div class="padrao servicos-1">
+                </div>
+            </section>
 
-      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
-        SERVIÇOS</div><br>
+            <!-- Services Tab -->
+            <section id="services" class="tab-content">
+                <h2>Serviços Oferecidos</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                        </div>
+                        <h3>Consultoria</h3>
+                        <p>
+                            Acompanho você semanalmente, te auxiliando a alcançar seus objetivos.
+                        </p>
+                        <a href="#" class="btn-small whatsapp-service" data-service="consultoria">Contratar</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-running" aria-hidden="true"></i>
+                        </div>
+                        <h3>Avaliação Física</h3>
+                        <p>
+                            Balança de bioimpedância + avaliações de perimetria corporal e dobras cutâneas.
+                        </p>
+                        <a href="#" class="btn-small whatsapp-service" data-service="avaliacao">Agendar</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-flask" aria-hidden="true"></i>
+                        </div>
+                        <h3>Exames</h3>
+                        <p>
+                            Solicitação e interpretação de exames bioquímicos (exames de sangue).
+                        </p>
+                        <a href="#" class="btn-small whatsapp-service" data-service="exames">Requisitar</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-apple-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Plano Alimentar</h3>
+                        <p>
+                            Plano alimentar personalizado, respeitando sua rotina e necessidades.
+                        </p>
+                        <a href="#" class="btn-small whatsapp-service" data-service="plano">Solicitar</a>
+                    </article>
+                </div>
+            </section>
 
+        </div>
+    </main>
 
-      <div class="servicos-card" onclick="servicosDetalhes(0)">Avaliação física</div>
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Formação</h4>
+                    <p>
+                        CRN 22103648
+                    </p>
+                    <p>
+                        Graduação UERJ (2022)
+                    </p>
+                    <p>
+                        Pós-graduação em Nutrição Clínica
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Acesso Rápido</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Sobre mim</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#books">E-Books</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons" aria-label="Social Media Links">
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp whatsapp-service"
+                                aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/tayaneventura.nutri" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"
+                                aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/tayane-ventura-lins-ferreira-96a961156/" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="current-year">2025</span> Todos os direitos reservados.</p>
+            </div>
 
+            <!-- Back to top button -->
+            <button id="back-to-top" aria-label="Back to top">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </button>
+        </div>
+    </footer>
 
-      <div class="servicos-card" onclick="servicosDetalhes(1)">Plano Alimentar</div>
+    <script src="script.js" defer></script>
 
-
-      <div class="servicos-card" onclick="servicosDetalhes(2)">Consultoria Semanal online</div>
-
-
-      <div class="servicos-card" onclick="servicosDetalhes(3)">Ofereço materiais de apoio como e-books de receitas
-        e lâminas de orientações</div>
-
-
-      <div class="servicos-card" onclick="servicosDetalhes(4)">Faço solicitação e leitura de exames bioquímicos
-        (exame de sangue). </div>
-
-
-    </div>
-
-
-    <div class="padrao actions-1">
-
-      <div style="font-weight: 600; font-size: 30px; font-family: 'IBM Plex Sans', sans-serif; margin-bottom: 10px">
-        REDES SOCIAIS</div><br>
-
-      <div class="social" id="whatsappButton" onclick="LinkUrl('https://api.whatsapp.com/send?phone=5521981938331')">
-        <img src="/images/logos/whatsapp.png" style="width: 80%; max-width: 100px"><br><br>Envie uma mensagem
-      </div>
-      <div class="social" onclick="LinkUrl('https://instagram.com/tayaneventura.nutri')"><img
-          src="/images/logos/instagram.png" style="width: 80%; max-width: 100px"><br><br>@tayaneventura.nutri
-      </div>
-    </div>
-
-    <br>
-
-    <span style="font-size: 12px; color: #999">Todos os direitos estão reservados.</span>
-
-    <br><br>
-
-  </center>
-
-  <script src="/js/scripts.js"> </script>
-
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nutricionista Tayane Ventura",
+      "url": "https://nutritayaneventura.github.io/",
+      "logo": "https://nutritayaneventura.github.io/images/tay.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-21-98193-8331",
+        "contactType": "atendimento nutricional"
+      },
+      "sameAs": [
+        "https://www.instagram.com/tayaneventura.nutri",
+        "https://www.linkedin.com/in/tayane-ventura-lins-ferreira-96a961156/"
+      ]
+    }
+    </script>
 </body>
 
 </html>
