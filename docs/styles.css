@@ -425,6 +425,12 @@ h2 span {
     color: var(--secondary-color);
 }
 
+.price-tag {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-top: 5px;
+}
+
 /* WhatsApp Button Styling */
 .whatsapp-btn {
     background-color: var(--whatsapp-color);
