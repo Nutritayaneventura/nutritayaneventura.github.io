@@ -193,22 +193,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 switch (serviceType) {
                     case "consulta":
-                        message = "Olá, Tayane! Gostaria de agendar uma consulta nutricional.";
+                        message = "Olá, Tayane! Eu tenho interesse na consulta nutricional.";
                         break;
                     case "consultoria":
-                        message = "Olá, Tayane! Tenho interesse na consultoria nutricional.";
+                        message = "Olá, Tayane! Eu tenho interesse na consultoria nutricional.";
                         break;
                     case "avaliacao":
-                        message = "Olá, Tayane! Gostaria de agendar uma avaliação física.";
+                        message = "Olá, Tayane! Eu tenho interesse na avaliação física.";
                         break;
                     case "exames":
-                        message = "Olá, Tayane! Gostaria de auxílio com exames bioquímicos.";
+                        message = "Olá, Tayane! Eu tenho interesse em exames bioquímicos.";
                         break;
                     case "plano":
-                        message = "Olá, Tayane! Tenho interesse em obter um plano alimentar personalizado.";
+                        message = "Olá, Tayane! Eu tenho interesse no plano alimentar personalizado.";
                         break;
                     default:
-                        message = "Olá, Tayane! Gostaria de obter mais informações sobre seus serviços nutricionais.";
+                        message = "Olá, Tayane! Eu gostaria de saber mais sobre seus serviços nutricionais.";
                 }
 
                 // Create and open WhatsApp URL
