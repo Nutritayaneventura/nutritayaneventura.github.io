@@ -1,9 +1,0 @@
-Review:
-- grammar
-- code
-- design
-- marketing
-
-Add E-books prices (how much?)
-
-Check OG image
