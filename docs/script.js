@@ -19,12 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mobile Navigation Menu Toggle
     if (elements.menu && elements.navList) {
         elements.menu.addEventListener("click", function () {
-            elements.navList.classList.toggle("show");
-            this.classList.toggle("active");
-            this.setAttribute(
-                "aria-expanded",
-                this.classList.contains("active").toString()
-            );
+            const menuBtn = this;
+            requestAnimationFrame(() => {
+                elements.navList.classList.toggle("show");
+                menuBtn.classList.toggle("active");
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    menuBtn.classList.contains("active").toString()
+                );
+            });
         });
 
         // Close menu when clicking outside
@@ -34,9 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 !event.target.closest(".menu") &&
                 elements.navList.classList.contains("show")
             ) {
-                elements.navList.classList.remove("show");
-                elements.menu.classList.remove("active");
-                elements.menu.setAttribute("aria-expanded", "false");
+                requestAnimationFrame(() => {
+                    elements.navList.classList.remove("show");
+                    elements.menu.classList.remove("active");
+                    elements.menu.setAttribute("aria-expanded", "false");
+                });
             }
         });
     }
@@ -50,26 +55,28 @@ document.addEventListener("DOMContentLoaded", function () {
             if (tabLink) {
                 e.preventDefault();
 
-                // Remove active class from all tabs and content
-                elements.tabLinks.forEach((item) => item.classList.remove("active"));
-                elements.tabContents.forEach((content) =>
-                    content.classList.remove("active")
-                );
-
-                // Add active class to current tab and content
-                tabLink.classList.add("active");
                 const tabId = tabLink.getAttribute("data-tab");
-                const tabContent = document.getElementById(tabId);
 
-                if (tabContent) {
-                    tabContent.classList.add("active");
-                }
+                requestAnimationFrame(() => {
+                    // Remove active class from all tabs and content
+                    elements.tabLinks.forEach((item) => item.classList.remove("active"));
+                    elements.tabContents.forEach((content) => content.classList.remove("active"));
+
+                    // Add active class to current tab and content
+                    tabLink.classList.add("active");
+                    const tabContent = document.getElementById(tabId);
+                    if (tabContent) {
+                        tabContent.classList.add("active");
+                    }
+                });
 
                 // Close mobile menu after tab selection
                 if (elements.navList.classList.contains("show")) {
-                    elements.navList.classList.remove("show");
-                    elements.menu.classList.remove("active");
-                    elements.menu.setAttribute("aria-expanded", "false");
+                    requestAnimationFrame(() => {
+                        elements.navList.classList.remove("show");
+                        elements.menu.classList.remove("active");
+                        elements.menu.setAttribute("aria-expanded", "false");
+                    });
                 }
 
                 // Update URL hash
@@ -90,16 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (hash) {
             const activeTab = document.querySelector(`[data-tab="${hash}"]`);
             if (activeTab) {
-                elements.tabLinks.forEach((item) => item.classList.remove("active"));
-                elements.tabContents.forEach((content) =>
-                    content.classList.remove("active")
-                );
+                requestAnimationFrame(() => {
+                    elements.tabLinks.forEach((item) => item.classList.remove("active"));
+                    elements.tabContents.forEach((content) => content.classList.remove("active"));
 
-                activeTab.classList.add("active");
-                const tabContent = document.getElementById(hash);
-                if (tabContent) {
-                    tabContent.classList.add("active");
-                }
+                    activeTab.classList.add("active");
+                    const tabContent = document.getElementById(hash);
+                    if (tabContent) {
+                        tabContent.classList.add("active");
+                    }
+                });
 
                 // Scroll to top of page
                 window.scrollTo({
@@ -145,11 +152,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Back to top button
     if (elements.backToTopBtn) {
+        let ticking = false;
         window.addEventListener("scroll", function () {
-            if (window.scrollY > 300) {
-                elements.backToTopBtn.classList.add("visible");
-            } else {
-                elements.backToTopBtn.classList.remove("visible");
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 300) {
+                        elements.backToTopBtn.classList.add("visible");
+                    } else {
+                        elements.backToTopBtn.classList.remove("visible");
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         });
 

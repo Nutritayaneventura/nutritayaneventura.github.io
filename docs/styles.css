@@ -5,13 +5,8 @@
     --accent-color: #a57a6f;
     --light-color: #ffffff;
     --dark-color: #333333;
-    --text-color: #333333;
     --light-gray: #f0f0f0;
     --medium-gray: #dddddd;
-    --error-color: #e74c3c;
-    --success-color: #27ae60;
-    --whatsapp-color: #604b42;
-    --whatsapp-dark: #604b42cb;
     --border-radius: 8px;
     --transition: all 0.3s ease;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -29,7 +24,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--dark-color);
     background-color: var(--light-color);
     overflow-x: hidden;
 }
@@ -433,7 +428,7 @@ h2 span {
 
 /* WhatsApp Button Styling */
 .whatsapp-btn {
-    background-color: var(--whatsapp-color);
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -444,7 +439,7 @@ h2 span {
 
 .whatsapp-btn:hover,
 .whatsapp-btn:focus {
-    background-color: var(--whatsapp-dark);
+    background-color: var(--primary-dark);
 }
 
 .whatsapp-btn i {
@@ -459,7 +454,7 @@ h2 span {
 
 .details-btn {
     background-color: var(--light-gray);
-    color: var(--text-color);
+    color: var(--dark-color);
     width: 100%;
     margin: 0;
 }
@@ -506,7 +501,7 @@ h2 span {
 }
 
 .whatsapp-business-info h4 i {
-    color: var(--whatsapp-color);
+    color: var(--primary-color);
 }
 
 .payment-methods {
