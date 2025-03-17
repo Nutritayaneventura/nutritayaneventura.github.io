@@ -20,14 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (elements.menu && elements.navList) {
         elements.menu.addEventListener("click", function () {
             const menuBtn = this;
-            requestAnimationFrame(() => {
-                elements.navList.classList.toggle("show");
-                menuBtn.classList.toggle("active");
-                menuBtn.setAttribute(
-                    "aria-expanded",
-                    menuBtn.classList.contains("active").toString()
-                );
-            });
+            elements.navList.classList.toggle("show");
+            menuBtn.classList.toggle("active");
+            menuBtn.setAttribute(
+                "aria-expanded",
+                menuBtn.classList.contains("active").toString()
+            );
         });
 
         // Close menu when clicking outside
@@ -37,11 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 !event.target.closest(".menu") &&
                 elements.navList.classList.contains("show")
             ) {
-                requestAnimationFrame(() => {
-                    elements.navList.classList.remove("show");
-                    elements.menu.classList.remove("active");
-                    elements.menu.setAttribute("aria-expanded", "false");
-                });
+                elements.navList.classList.remove("show");
+                elements.menu.classList.remove("active");
+                elements.menu.setAttribute("aria-expanded", "false");
             }
         });
     }
@@ -57,26 +53,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const tabId = tabLink.getAttribute("data-tab");
 
-                requestAnimationFrame(() => {
-                    // Remove active class from all tabs and content
-                    elements.tabLinks.forEach((item) => item.classList.remove("active"));
-                    elements.tabContents.forEach((content) => content.classList.remove("active"));
+                // Remove active class from all tabs and content
+                elements.tabLinks.forEach((item) => item.classList.remove("active"));
+                elements.tabContents.forEach((content) => content.classList.remove("active"));
 
-                    // Add active class to current tab and content
-                    tabLink.classList.add("active");
-                    const tabContent = document.getElementById(tabId);
-                    if (tabContent) {
-                        tabContent.classList.add("active");
-                    }
-                });
+                // Add active class to current tab and content
+                tabLink.classList.add("active");
+                const tabContent = document.getElementById(tabId);
+                if (tabContent) {
+                    tabContent.classList.add("active");
+                }
 
                 // Close mobile menu after tab selection
                 if (elements.navList.classList.contains("show")) {
-                    requestAnimationFrame(() => {
-                        elements.navList.classList.remove("show");
-                        elements.menu.classList.remove("active");
-                        elements.menu.setAttribute("aria-expanded", "false");
-                    });
+                    elements.navList.classList.remove("show");
+                    elements.menu.classList.remove("active");
+                    elements.menu.setAttribute("aria-expanded", "false");
                 }
 
                 // Update URL hash
@@ -97,16 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (hash) {
             const activeTab = document.querySelector(`[data-tab="${hash}"]`);
             if (activeTab) {
-                requestAnimationFrame(() => {
-                    elements.tabLinks.forEach((item) => item.classList.remove("active"));
-                    elements.tabContents.forEach((content) => content.classList.remove("active"));
+                elements.tabLinks.forEach((item) => item.classList.remove("active"));
+                elements.tabContents.forEach((content) => content.classList.remove("active"));
 
-                    activeTab.classList.add("active");
-                    const tabContent = document.getElementById(hash);
-                    if (tabContent) {
-                        tabContent.classList.add("active");
-                    }
-                });
+                activeTab.classList.add("active");
+                const tabContent = document.getElementById(hash);
+                if (tabContent) {
+                    tabContent.classList.add("active");
+                }
 
                 // Scroll to top of page
                 window.scrollTo({
@@ -155,15 +145,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let ticking = false;
         window.addEventListener("scroll", function () {
             if (!ticking) {
-                requestAnimationFrame(() => {
-                    if (window.scrollY > 300) {
-                        elements.backToTopBtn.classList.add("visible");
-                    } else {
-                        elements.backToTopBtn.classList.remove("visible");
-                    }
-                    ticking = false;
-                });
-                ticking = true;
+                if (window.scrollY > 300) {
+                    elements.backToTopBtn.classList.add("visible");
+                } else {
+                    elements.backToTopBtn.classList.remove("visible");
+                }
+                ticking = false;
             }
         });
 
